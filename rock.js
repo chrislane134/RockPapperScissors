@@ -1,3 +1,18 @@
+  const rockBtn = document.querySelector('#rock');
+  const paperBtn = document.querySelector('#paper');
+  const scissorBtn = document.querySelector('#scissors');
+
+  function handleClick (choice) {
+    const computerChoice = getComputerChoice();
+    playRound (choice, computerChoice);
+  }
+
+  rockBtn.addEventListener("click", () => handleClick("rock"));
+  paperBtn.addEventListener("click", () => handleClick("paper"));
+  scissorBtn.addEventListener("click", () => handleClick("scissors"));
+
+
+
 function getComputerChoice(computerChoice){
     const getRandomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,11 +30,11 @@ function getComputerChoice(computerChoice){
      return computerChoice;
     }
 
-function getHumanChoice(humanChoice){
+/*function getHumanChoice(humanChoice){
     humanChoice = prompt('Make your choice. Rock, Paper or Scissors').toLowerCase();
     console.log(humanChoice)
     return humanChoice;
-}
+} */
 
 let humanScore = 0;
     let computerScore = 0;
@@ -43,7 +58,9 @@ function playRound(humanChoice, computerChoice){
     
 }
 
-function playGame(playCounter = 0){
+
+
+/* function playGame(playCounter = 0){
  
     
      if (playCounter >= 5){
@@ -62,7 +79,7 @@ function playGame(playCounter = 0){
     console.log("Current Computer Score: " + computerScore);
     playGame(playCounter);
     }
-   
+   */
 
 
 playGame();
